@@ -35,7 +35,7 @@ public class Task {
         return description;
     }
 
-    public Date getDueDate() {
+    public LocalDateTime getDueDate() {
         return dueDate;
     }
 
