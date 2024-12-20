@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <style>
+        /* Reset body styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Light blue gradient background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle particle texture */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Menu container */
+        .menu-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95); /* White with slight transparency */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #007bff, #00c851);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .menu-item {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            padding: 12px 25px;
+            border: 2px solid #00acc1; /* Light blue border */
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(135deg, #29b6f6, #00acc1); /* Blue gradient */
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item:hover {
+            background: #007bff;
+            color: #fff;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+        }
+
+        .menu-item:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .menu-item {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="menu-container">
+    <h1>Welcome to EduTimeManager</h1>
+    <div id="menu">
+        <div class="menu-item" data-option="1">1. View Tasks</div>
+        <div class="menu-item" data-option="2">2. Create Task</div>
+        <div class="menu-item" data-option="3">3. Update Task</div>
+        <div class="menu-item" data-option="4">4. Delete Task</div>
+        <div class="menu-item" data-option="5">5. Exit</div>
+    </div>
+    <div class="menu-footer">
+        Select an option to proceed.
+    </div>
+</div>
+
+<script>
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const option = item.getAttribute('data-option');
+            alert(`You selected option ${option}`);
+            // Add logic here to navigate or perform actions based on the option
+        });
+    });
+</script>
+</body>
+</html>
