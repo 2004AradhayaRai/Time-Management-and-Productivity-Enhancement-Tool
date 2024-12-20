@@ -1,7 +1,7 @@
-package edu.time.manager.ui;
+package main.java.edu.time.manager.ui;
 
-import edu.time.manager.models.Task;
-import edu.time.manager.models.Priority;
+import main.java.edu.time.manager.models.Task;
+import main.java.edu.time.manager.models.Priority;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package edu.time.manager.dao;
+package main.java.edu.time.manager.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

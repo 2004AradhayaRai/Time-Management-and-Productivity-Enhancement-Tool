@@ -1,4 +1,4 @@
-package edu.time.manager.models;
+package main.java.edu.time.manager.models;
 
 import java.sql.Date;
 import java.time.LocalDateTime;

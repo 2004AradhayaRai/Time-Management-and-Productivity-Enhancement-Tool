@@ -1,4 +1,4 @@
-package edu.time.manager;
+package main.java.edu.time.manager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

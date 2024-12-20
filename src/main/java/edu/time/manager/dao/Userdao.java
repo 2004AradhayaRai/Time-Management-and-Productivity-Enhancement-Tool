@@ -1,6 +1,7 @@
-package edu.time.manager.dao;
+package main.java.edu.time.manager.dao;
 
-import edu.time.manager.models.User;
+import main.java.edu.time.manager.models.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +24,30 @@ public class Userdao {
             e.printStackTrace();
         }
     }
+    // Add this method in Userdao
+    public User getUserByEmailAndPassword(String email, String password) {
+        User user = null;
+        String sql = "SELECT * FROM Users WHERE email = ? AND password_hash = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setString(2, password);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                user = new User(
+                        rs.getInt("id"),
+                        rs.getString("username"),
+                        rs.getString("email"),
+                        rs.getString("password_hash"),
+                        rs.getString("role")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
 
     // Retrieve a user by ID
     public User getUserById(int id) {

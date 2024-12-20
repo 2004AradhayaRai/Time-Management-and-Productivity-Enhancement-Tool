@@ -1,6 +1,6 @@
-package edu.time.manager.dao;
+package main.java.edu.time.manager.dao;
 
-import edu.time.manager.models.Task;
+import main.java.edu.time.manager.models.Task;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package edu.time.manager.ui;
+package main.java.edu.time.manager.ui;
 
 import java.util.Scanner;
 

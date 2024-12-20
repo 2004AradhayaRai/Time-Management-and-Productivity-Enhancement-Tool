@@ -1,4 +1,4 @@
-package edu.time.manager.utils;
+package main.java.edu.time.manager.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
